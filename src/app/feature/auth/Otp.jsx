@@ -14,6 +14,7 @@ const Otp = () => {
   const register = () => {
     if (input === otp) {
       console.log("work");
+      navigate("/home");
     }
   };
 
