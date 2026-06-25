@@ -74,6 +74,9 @@ const authSlice = createSlice({
         state.loading = true;
       })
       .addCase(registerUser.fulfilled, (state, action) => {
+        // console.log("fullfil", action.payload);
+        console.log("fullfil", action.payload.data.otp.code);
+        state.data.code = action.payload.data.otp.code;
         state.success = action.payload.success;
         state.loading = false;
         state.errorMessage = null;
@@ -94,6 +97,7 @@ const authSlice = createSlice({
       })
       .addCase(loginUser.fulfilled, (state, action) => {
         state.success = action.payload.success;
+        state.data.code = action.payload.data.otp.code;
         state.loading = false;
         state.errorMessage = null;
       })

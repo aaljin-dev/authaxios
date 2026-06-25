@@ -12,9 +12,14 @@ const Register = () => {
 
   const [register, setRegister] = useState({});
 
+  const serverOtp = useSelector((state) => state.auth.data.code);
+
+  console.log(serverOtp);
+
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
+  // const otp = useSelector((state)=> state.auth.)
   const loading = useSelector((state) => state.auth.loading);
   const success = useSelector((state) => state.auth.success);
   const errorMessage = useSelector((state) => state.auth.errorMessage);

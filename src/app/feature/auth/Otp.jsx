@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Otp = () => {
+  const navigate = useNavigate();
+
   const dataAll = useSelector((state) => state.auth);
   console.log(dataAll);
 
